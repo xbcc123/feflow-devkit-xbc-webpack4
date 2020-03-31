@@ -1,0 +1,24 @@
+{
+    "builders": {
+      "dev": { 
+        "implementation": "./lib/dev.js",
+        "description": "Development command"
+      },
+      "test": {
+        "implementation": "./lib/test.js",
+        "description": "Test command"
+      },
+      "formalTest": {
+        "implementation": "./lib/formalTest.js",
+        "description": "FormalTest command"
+      },
+      "demo": {
+        "implementation": "./lib/demo.js",
+        "description": "Demo command"
+      },
+      "build": {
+        "implementation": "./lib/prod.js",
+        "description": "Build command"
+      }
+    }
+  }
