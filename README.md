@@ -33,10 +33,10 @@ cnpm install @feflow/cli -g
    
    {
      "devkit": {
-       "commands": {																// fef命令配置 dev, test...
+       "commands": {// fef命令配置 dev, test...
          "dev": {  
            "builder": "feflow-devkit-xbc-webpack4:dev",
-           "options": {															// 配置单独配置 配置项参考下面公用配置项
+           "options": {	// 配置单独配置 配置项参考下面公用配置项
              "isMinicss": false,
              "port": 8013
            } 
@@ -67,8 +67,8 @@ cnpm install @feflow/cli -g
            }
          }
        },
-       "commons": {  // 此处为公用配置
-         "entry": "main.js",	// 配置项目webpack 编译入口
+       "commons": {// 此处为公用配置
+         "entry": "main.js",// 配置项目webpack 编译入口
          "isModule": false,	// 开启css模块化 (vue项目不需要开启)
          "isMinicss": true,	// 是否需要抽离css (本地调试环境不需要)		
          "hasAnalyzer": false,// 是否开启webpack包大小的调试
@@ -76,10 +76,10 @@ cnpm install @feflow/cli -g
              "analyzerPort": 3478
          },
          "port": 1234,// webpack静态服务器启动端口号
-         "alias": {		// webpack别名配置
+         "alias": {// webpack别名配置
            "@": "src",
          },
-         "envs": {	  // 环境变量配置 目前只支持固定环境变量配置
+         "envs": {// 环境变量配置 目前只支持固定环境变量配置
            "dev": {
              "envObj": {
                "NODE_ENV": "\"development\"",
