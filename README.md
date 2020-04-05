@@ -77,19 +77,19 @@ cnpm install @feflow/cli -g
            }
          }
        },
-       "commons": {                                 // 此处为公用配置
-         "entry": "main.js",												// 配置项目webpack 编译入口
-         "isModule": false,													// 开启css模块化 (vue项目不需要开启)
-         "isMinicss": true,													// 是否需要抽离css (本地调试环境不需要)		
-         "hasAnalyzer": false,											// 是否开启webpack包大小的调试
-         "analyzerOptions": {												// 调试包的配置
+       "commons": {                         // 此处为公用配置
+         "entry": "main.js",								// 配置项目webpack 编译入口
+         "isModule": false,									// 开启css模块化 (vue项目不需要开启)
+         "isMinicss": true,									// 是否需要抽离css (本地调试环境不需要)		
+         "hasAnalyzer": false,							// 是否开启webpack包大小的调试
+         "analyzerOptions": {								// 调试包的配置
              "analyzerPort": 3478
          },
-         "port": 1234,															// webpack静态服务器启动端口号
-         "alias": {																	// webpack别名配置
+         "port": 1234,											// webpack静态服务器启动端口号
+         "alias": {													// webpack别名配置
            "@": "src",
          },
-         "envs": {																	// 环境变量配置 目前只支持固定环境变量配置
+         "envs": {												  // 环境变量配置 目前只支持固定环境变量配置
            "dev": {
              "envObj": {
                "NODE_ENV": "\"development\"",
