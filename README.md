@@ -13,16 +13,6 @@ feflow-devkit-webpack4 为feflow套件 支持编译指定React，Vue项目模板
 
 - 目前支持多个环境配置（dev， test，formalTest，demo,  prod ）
 
-  
-
-## 安装
-
-确保feflow的版本在 v0.18.0 以上, 可以通过如下命令安装最新feflow版本
-```
-$ npm install feflow-cli -g
-```
-
-
 
 ## 开始使用
 
