@@ -1,98 +1,158 @@
-## 介绍
 
+
+<h1 align="center">feflow-devkit-xbc-webpack4</h1>
 feflow-devkit-webpack4 为feflow套件 支持编译指定React，Vue项目模板 通过配置套件配置可以定制化项目编译参数
+
+
+
+## 特性
+
+- 使用webpack4 + babel7 最新的构建解决方案
+
+- 支持React，Vue的编译运行
+
+- 目前支持多个环境配置（dev， test，formalTest，demo,  prod ）
+
+  
+
+## 安装
+
+确保feflow的版本在 v0.18.0 以上, 可以通过如下命令安装最新feflow版本
+```
+$ npm install feflow-cli -g
+```
+
 
 
 ## 开始使用
 
+先通过 cnpm 安装 feflow 开始.
+
 ```
 cnpm install @feflow/cli -g
 ```
-1. 在项目根目录新建.feflowrc.json文件
+
+
+
+### 添加feflow.json配置文件
+
+在项目根目录添加 `feflow.json` 配置文件
+
+```js
+   # feflowrc.json
+   
+   {
+     "devkit": {
+       "commands": {																// fef命令配置 dev, test...
+         "dev": {  
+           "builder": "feflow-devkit-xbc-webpack4:dev",
+           "options": {															// 配置单独配置 配置项参考下面公用配置项
+             "isMinicss": false,
+             "port": 8013
+           } 
+         },
+         "test": {
+           "builder": "feflow-devkit-xbc-webpack4:test",
+           "options": {
+             "isMinicss": true
+           }
+         },
+         "formalTest": {
+           "builder": "feflow-devkit-xbc-webpack4:formalTest",
+           "options": {
+             "isMinicss": true
+           }
+         },
+         "demo": {
+           "builder": "feflow-devkit-xbc-webpack4:demo",
+           "options": {
+             "isMinicss": true
+           }
+         },
+         "build": {
+           "builder": "feflow-devkit-xbc-webpack4:build",
+           "options": {
+             "port": 8003,
+             "isMinicss": true
+           }
+         }
+       },
+       "commons": {                                 // 此处为公用配置
+         "entry": "main.js",												// 配置项目webpack 编译入口
+         "isModule": false,													// 开启css模块化 (vue项目不需要开启)
+         "isMinicss": true,													// 是否需要抽离css (本地调试环境不需要)		
+         "hasAnalyzer": false,											// 是否开启webpack包大小的调试
+         "analyzerOptions": {												// 调试包的配置
+             "analyzerPort": 3478
+         },
+         "port": 1234,															// webpack静态服务器启动端口号
+         "alias": {																	// webpack别名配置
+           "@": "src",
+         },
+         "envs": {																	// 环境变量配置 目前只支持固定环境变量配置
+           "dev": {
+             "envObj": {
+               "NODE_ENV": "\"development\"",
+               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+             }
+           },
+           "test": {
+             "envObj": {
+               "NODE_ENV": "\"test\"",
+               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+             }
+           },
+           "formalTest": {
+             "envObj": {
+               "NODE_ENV": "\"formalTest\"",
+               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+             }
+           },
+           "demo": {
+             "envObj": {
+               "NODE_ENV": "\"demo\"",
+               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+             }
+           },
+           "build": {
+             "envObj": {
+               "NODE_ENV": "\"production\"",
+               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+             }
+           }
+         }
+       }
+     }
+   }
+   
 ```
-# feflowrc.json
 
-{
-  "devkit": {
-    "commands": {
-      "dev": {
-        "builder": "feflow-devkit-xbc-webpack4-react:dev",
-        "options": {
-          "port": 1234,
-          "currentEnv": "dev",
-          "externals": [
-            {
-              "module": "react",
-              "entry": "https://11.url.cn/now/lib/16.2.0/react.min.js?_bid=3123",
-              "global": "React"
-            },
-            {
-              "module": "react-dom",
-              "entry": "https://11.url.cn/now/lib/16.2.0/react-dom.min.js?_bid=3123",
-              "global": "ReactDOM"
-            }
-          ],
-          "envs": {
-            "dev": {
-              "envObj": {
-                "NODE_ENV": "\"development\"",
-                "API_HOST": "\"http://192.168.16.9:8081\"",
-                "SJY_URL": "\"http://192.168.16.9:9000\"",
-                "HEHE_URL": "\"http://192.168.16.9:9001\"",
-                "API_HOST_H5": "\"http://192.168.16.9:8081\"",
-                "API_IMG": "\"http://192.168.16.103:9999/\""
-              }
-            },
-            "prod": {
-              "envObj": {
-                "NODE_ENV": "",
-                "API_HOST": ""
-              }
-            }
-          }
-        }
-      },
-      "build": {
-        "builder": "feflow-devkit-xbc-webpack4-react:build",
-        "options": {
-            "port": 8003,
-            "currentEnv": "prod",
-            "externals": [
-              {
-                "module": "react",
-                "entry": "https://11.url.cn/now/lib/16.2.0/react.min.js?_bid=3123",
-                "global": "React"
-              },
-              {
-                "module": "react-dom",
-                "entry": "https://11.url.cn/now/lib/16.2.0/react-dom.min.js?_bid=3123",
-                "global": "ReactDOM"
-              }
-            ],
-            "envs": {
-              "dev": {
-                "envObj": {
-                  "NODE_ENV": "\"development\"",
-                  "API_HOST": "\"http://192.168.16.9:8081\"",
-                  "SJY_URL": "\"http://192.168.16.9:9000\"",
-                  "HEHE_URL": "\"http://192.168.16.9:9001\"",
-                  "API_HOST_H5": "\"http://192.168.16.9:8081\"",
-                  "API_IMG": "\"http://192.168.16.103:9999/\""
-                }
-              },
-              "prod": {
-                "envObj": {
-                  "NODE_ENV": "",
-                  "API_HOST": ""
-                }
-              }
-            }
-          }
-      }
-    }
-  }
-}
+   
 
+### 命令
 
+```sh
+$ fef dev      # 本地开发时的命令
+$ fef test     # 发布时的打包命令开发测试
+$ fef formal   # 发布时的打包命令测试测试
+$ fef demo     # 发布时的打包命令演示环境
+$ fef build    # 发布时的打包命令生产环境
 ```
+
+## 文档
+
+待定
+
+
+
+##  本地调试方式
+
+待定
+
+
+
+##  贡献代码方式
+
+pr工作流
+
 
