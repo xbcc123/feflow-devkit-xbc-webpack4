@@ -134,15 +134,17 @@ $ fef build    # 发布时的打包命令生产环境
 待定
 
 
-
 ##  本地调试方式
 
 待定
-
-
 
 ##  贡献代码方式
 
 pr工作流
 
+##  git提交规范
 
+[参考地址](https://github.com/xbcc123/git-commit)
+
+##  eslint规范
+待定
