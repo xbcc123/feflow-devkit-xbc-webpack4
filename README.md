@@ -124,7 +124,7 @@ cnpm install @feflow/cli -g
 ```sh
 $ fef dev      # 本地开发时的命令
 $ fef test     # 发布时的打包命令开发测试
-$ fef formal   # 发布时的打包命令测试测试
+$ fef formalTest   # 发布时的打包命令测试测试
 $ fef demo     # 发布时的打包命令演示环境
 $ fef build    # 发布时的打包命令生产环境
 ```
