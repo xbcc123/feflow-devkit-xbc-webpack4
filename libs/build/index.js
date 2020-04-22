@@ -375,6 +375,7 @@ class Builder {
 
   // isMinicss 是否开启css抽离  isModule 是否开启css Modules
   setCssRule(isModule, isMinicss) {
+    console.log(isModule)
     return {
       test: /\.css$/,
       use: [
@@ -382,8 +383,11 @@ class Builder {
         {
           loader: "css-loader",
           options: {
-            modules: isModule
-            // localIdentName: "[name]__[local]--[hash:base64:5]"
+            modules: isModule ? {
+              mode: 'local',
+              exportGlobals: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }: false,
           }
         }
       ]
@@ -398,8 +402,11 @@ class Builder {
         {
           loader: "css-loader",
           options: {
-            modules: isModule
-            // localIdentName: "[name]__[local]--[hash:base64:5]"
+            modules: isModule ? {
+              mode: 'local',
+              exportGlobals: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }: false,
           }
         },
         "less-loader"
@@ -415,8 +422,11 @@ class Builder {
         {
           loader: "css-loader",
           options: {
-            modules: isModule
-            // localIdentName: "[name]__[local]--[hash:base64:5]"
+            modules: isModule ? {
+              mode: 'local',
+              exportGlobals: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }: false,
           }
         },
         "sass-loader"
@@ -432,8 +442,11 @@ class Builder {
         {
           loader: "css-loader",
           options: {
-            modules: isModule
-            // localIdentName: "[name]__[local]--[hash:base64:5]"
+            modules: isModule ? {
+              mode: 'local',
+              exportGlobals: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            }: false,
           }
         },
         "stylus-loader"
