@@ -216,7 +216,7 @@ module.exports = {
     //   filename: "[name]_[contenthash:8].css"
     // }),
     new VueLoaderPlugin(),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.join(projectRoot, "index.html")
