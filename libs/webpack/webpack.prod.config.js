@@ -1,4 +1,5 @@
 const cssnano = require("cssnano");
+const webpack = require("webpack");
 const merge = require("webpack-merge");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -76,7 +77,7 @@ const prodConfig = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "static/css/[name].[contenthash].css"
-    })
+    }),
     // new CompressionPlugin({
     //   asset: "[path].gz[query]",
     //   algorithm: "gzip",
@@ -104,6 +105,11 @@ const prodConfig = {
     //     },
     //   ],
     // }),
+    new webpack.HashedModuleIdsPlugin({
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 20
+    })
   ],
   optimization: {
     splitChunks: {
@@ -185,14 +191,14 @@ const prodConfig = {
         // compress: true,
         // mangle: true,
         cache: true,
-        parallel: true,
+        parallel: false, // 开启多进程
         terserOptions: {
           ecma: undefined,
           warnings: false,
           parse: {},
           compress: {
             drop_console: true,
-            pure_funcs: ['console.log']
+            pure_funcs: ['console.log']  // 统一删除console.log
             // pure_funcs: 'console.info'
           },
           mangle: true, // Note `mangle.properties` is `false` by default.
@@ -216,18 +222,6 @@ const prodConfig = {
       })
     ]
   }
-  // optimization: {
-  //   splitChunks: {
-  //     minSize: 0,
-  //     cacheGroups: {
-  //       commons: {
-  //         name: "commons",
-  //         chunks: "all",
-  //         minChunks: 2
-  //       }
-  //     }
-  //   }
-  // }
 };
 
 module.exports = merge(baseConfig, prodConfig);

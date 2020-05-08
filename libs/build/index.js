@@ -375,7 +375,7 @@ class Builder {
 
   // isMinicss 是否开启css抽离  isModule 是否开启css Modules
   setCssRule(isModule, isMinicss) {
-    console.log(isModule)
+    // console.log(isModule)
     return {
       test: /\.css$/,
       use: [

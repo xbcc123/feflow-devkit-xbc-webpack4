@@ -1,6 +1,6 @@
 {
   "name": "feflow-devkit-xbc-webpack4",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "webpack.",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^4.0.0",
+    "ora": "^4.0.4",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },

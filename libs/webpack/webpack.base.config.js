@@ -52,7 +52,7 @@ const projectRoot = process.cwd();
 
 // const { entry, htmlWebpackPlugins } = setMPA();
 
-// const entry = ['@babel/polyfill', path.join(projectRoot, "./src/index.js")]; 
+// const entry = ['@babel/polyfill', path.join(projectRoot, "./src/index.js")];
 const entry = path.join(projectRoot, "./src/index.js")
 
 // console.log(__dirname)
@@ -96,8 +96,8 @@ module.exports = {
       path.resolve(__dirname, "../../node_modules"),
       path.join(projectRoot, "node_modules")
     ]
-  }, 
- 
+  },
+
   resolve: {
     extensions: [".ts", ".js", "jsx", ".tsx", ".json", ".vue"],
     alias: {
@@ -105,17 +105,6 @@ module.exports = {
       app: path.join(projectRoot, "./src/app.js"),
       "@": path.join(projectRoot, "./src")
 
-      // "$pRoot": path.join(projectRoot, "./publicResource"),
-      // "$pRootBC": path.join(projectRoot, "./publicResource/publicBasicsComponents"),
-      // "$pRootBuC": path.join(projectRoot, "./publicResource/publicBusinessComponents"),
-      // "$pRootStatic": path.join(projectRoot, "./publicResource/publicStatic"),
-      // "$pRootUtils": path.join(projectRoot, "./publicResource/publicUtils"),
-
-      // '$pRoot': resolve('publicResource'),
-      // '$pRootBC': resolve('publicResource/publicBasicsComponents'),
-      // '$pRootBuC': resolve('publicResource/publicBusinessComponents'),
-      // '$pRootStatic': resolve('publicResource/publicStatic'),
-      // '$pRootUtils': resolve('publicResource/publicUtils'),
     },
     mainFiles: ["index"],
     // modules: ["node_modules"],
@@ -227,7 +216,7 @@ module.exports = {
     //   filename: "[name]_[contenthash:8].css"
     // }),
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.join(projectRoot, "index.html")
