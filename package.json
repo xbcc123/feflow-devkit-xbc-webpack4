@@ -1,7 +1,7 @@
 {
   "name": "feflow-devkit-xbc-webpack4",
-  "version": "0.0.21",
-  "description": "webpack.",
+  "version": "0.0.22",
+  "description": "中谷科技webpack4编译套件",
   "main": "index.js",
   "scripts": {
     "prepublish": "./node_modules/.bin/babel libs --out-dir lib --presets=@babel/env",
@@ -18,9 +18,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
@@ -40,6 +38,7 @@
     "babel-loader": "^8.0.6",
     "cache-loader": "^4.1.0",
     "chai": "^4.2.0",
+    "chalk": "^4.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.1.0",
     "copy-webpack-plugin": "^5.1.1",
@@ -57,7 +56,7 @@
     "glob": "^7.1.6",
     "glob-all": "^3.1.0",
     "html-inline-css-webpack-plugin": "1.8.0",
-    "html-webpack-externals-plugin": "3.8.0",
+    "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "4.0.0-beta.1",
     "husky": "^4.2.3",
@@ -74,6 +73,7 @@
     "node-sass": "^4.13.1",
     "offline-webpack-plugin": "0.1.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "ora": "^4.0.4",
     "osenv": "^0.1.5",
     "portfinder": "^1.0.25",
     "postcss-loader": "^3.0.0",
@@ -111,9 +111,7 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.2",
-    "webpack-subresource-integrity": "1.4.0",
-    "chalk": "^4.0.0",
-    "ora": "^4.0.4"
+    "webpack-subresource-integrity": "1.4.0"
   },
   "__npminstall_done": "Sat Mar 28 2020 15:07:04 GMT+0800 (GMT+08:00)",
   "_from": "feflow-devkit-xbc-webpack4@0.0.14",

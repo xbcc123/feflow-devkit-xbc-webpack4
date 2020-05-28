@@ -3,14 +3,14 @@ import glob from "glob";
 import webpack from "webpack";
 import fs from "fs";
 // import osenv from "osenv";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+// import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackExternalsPlugin from "html-webpack-externals-plugin";
-import SriPlugin from "webpack-subresource-integrity";
-import OfflineWebpackPlugin from "offline-webpack-plugin";
-import CleanWebpackPlugin from "clean-webpack-plugin";
+// import SriPlugin from "webpack-subresource-integrity";
+// import OfflineWebpackPlugin from "offline-webpack-plugin";
+// import CleanWebpackPlugin from "clean-webpack-plugin";
 // import UglifyJsPlugin from "uglifyjs-webpack-plugin";
-import StringReplaceWebpackPlugin from "string-replace-webpack-plugin";
+// import StringReplaceWebpackPlugin from "string-replace-webpack-plugin";
 // import HTMLInlineCSSWebpackPlugin from "html-inline-css-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
@@ -24,6 +24,7 @@ import {
   //   getCSSModulesLocalIdent
 } from "../tools/index.js";
 // import Config from "./config";
+
 const webpackMerge = require("webpack-merge");
 
 function getPath(filename) {
@@ -332,6 +333,10 @@ class Builder {
     // 环境变量配置
     mixPlugins.push(this.setDefinePlugin(options.envs, options.currentEnv));
 
+    // externals配置
+    mixPlugins.push(this.setExternalPlugin(options.externals));
+
+
     // 是否启动打包性能分析
     if (options.hasAnalyzer) {
       mixPlugins.push(this.setBundleSnalyzerPlugin(options.analyzerOptions));
@@ -346,6 +351,17 @@ class Builder {
     return mixConfig;
   }
 
+
+  /**
+   * externals 配置
+   * @private
+   */
+  setExternalPlugin(externals) {
+      const newExternals = externals
+      return new HtmlWebpackExternalsPlugin({externals: newExternals});
+  }
+
+  // 设置打包优化
   setBundleSnalyzerPlugin(analyzerOptions) {
     if (!analyzerOptions || JSON.stringify(analyzerOptions) === '{}') {
       analyzerOptions = {
@@ -376,7 +392,6 @@ class Builder {
 
   // isMinicss 是否开启css抽离  isModule 是否开启css Modules
   setCssRule(isModule, isMinicss) {
-    // console.log(isModule)
     return {
       test: /\.css$/,
       use: [
