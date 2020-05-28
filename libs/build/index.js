@@ -11,7 +11,7 @@ import OfflineWebpackPlugin from "offline-webpack-plugin";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 // import UglifyJsPlugin from "uglifyjs-webpack-plugin";
 import StringReplaceWebpackPlugin from "string-replace-webpack-plugin";
-import HTMLInlineCSSWebpackPlugin from "html-inline-css-webpack-plugin";
+// import HTMLInlineCSSWebpackPlugin from "html-inline-css-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
@@ -42,9 +42,9 @@ function getPath(filename) {
 // 当前运行的时候的根目录
 let projectRoot = getPath(".feflowrc.json");
 
-// if (!projectRoot) {
-//     projectRoot = getPath('feflow.js');
-// }
+if (!projectRoot) {
+    projectRoot = getPath('.feflowrc.js');
+}
 
 // 最基础的配置
 // const baseConfig = {
@@ -75,7 +75,6 @@ let projectRoot = getPath(".feflowrc.json");
 
 const baseConfig = {
   module: {
-    // rules: []
   },
   resolve: {}
 };
@@ -370,6 +369,8 @@ class Builder {
 
   // 设置入口
   setEntry(entry) {
+    console.log(projectRoot)
+    console.log(path.join(projectRoot, `./src/${entry}`))
     return path.join(projectRoot, `./src/${entry}`);
   }
 

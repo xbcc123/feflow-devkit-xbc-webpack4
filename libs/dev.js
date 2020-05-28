@@ -41,14 +41,15 @@ function getConfig(options, env) {
   // 将公共配置绑定到各个环境
   options = setSingleConfig(options)
   // console.log(options)
-  console.log(options.devkit.commands[env].options)
+  // console.log(options.devkit.commands[env].options)
   return options.devkit.commands[env].options;
 }
 
 module.exports = ctx => {
+
   importConfig = getConfig(ctx.projectConfig, "dev");
   config = merge(currentConfig, build.createDevConfig(importConfig));
-  console.log(config);
+  // console.log(config);
 
   const compiler = webpack(config);
   const devServerOptions = Object.assign({}, config.devServer, {
@@ -57,13 +58,13 @@ module.exports = ctx => {
       colors: true
     }
   });
-  
+
   const server = new WebpackDevServer(compiler, devServerOptions);
 
   server.listen(devServerOptions.port, myHost, () => {
     console.log(`Starting server on  http://${myHost}:${devServerOptions.port}`);
   });
-  
+
   // webpack(config, (err, stats) => {
   //   if (err) {
   //     console.log(err);
