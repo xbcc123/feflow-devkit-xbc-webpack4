@@ -334,8 +334,9 @@ class Builder {
     mixPlugins.push(this.setDefinePlugin(options.envs, options.currentEnv));
 
     // externals配置
-    mixPlugins.push(this.setExternalPlugin(options.externals));
-
+    if(options.externals && options.externals.length > 0){
+      mixPlugins.push(this.setExternalPlugin(options.externals));
+    }
 
     // 是否启动打包性能分析
     if (options.hasAnalyzer) {
