@@ -386,8 +386,6 @@ class Builder {
 
   // 设置入口
   setEntry(entry) {
-    console.log(projectRoot)
-    console.log(path.join(projectRoot, `./src/${entry}`))
     return path.join(projectRoot, `./src/${entry}`);
   }
 
