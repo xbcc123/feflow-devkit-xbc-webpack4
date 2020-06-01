@@ -26,9 +26,9 @@ cnpm install @feflow/cli -g
 
 ### 添加feflow.json配置文件
 
-在项目根目录添加 `feflow.json` 配置文件
+在项目根目录添加 `feflow.json` 或者 `feflow.js`  配置文件
 
-```js
+```json
    # feflowrc.json
    
    {
