@@ -79,6 +79,13 @@ cnpm install @feflow/cli -g
          "alias": {// webpack别名配置
            "@": "src",
          },
+         externals: [
+                {
+                    module: "antd",
+                    entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
+                    global: "antd"     
+                },
+          ],
          "envs": {// 环境变量配置 目前只支持固定环境变量配置
            "dev": {
              "envObj": {
