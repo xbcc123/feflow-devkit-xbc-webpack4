@@ -30,7 +30,7 @@ export function singleKey(arr, key) {
 		obj = {}
 	for (let item of arr) {
 		if (!item[key]) {
-			item[key] = "nokey"
+			item[key] = parseInt(Math.random()* 100000000)
 		}
 		obj[item[key]] = item
 	}
