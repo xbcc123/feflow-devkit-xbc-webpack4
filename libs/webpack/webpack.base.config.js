@@ -134,9 +134,9 @@ module.exports = {
           path.resolve(__dirname, "../../node_modules")
         ],
         use: [
-          {
-            loader: "thread-loader"
-          },
+        //   {
+        //     loader: "thread-loader"
+        //   },
           {
             loader: "babel-loader",
             options: {
@@ -149,9 +149,9 @@ module.exports = {
       {
         test: /\.(j|t)sx?$/,
         use: [
-          {
-            loader: "thread-loader"
-          },
+        //   {
+        //     loader: "thread-loader"
+        //   },
           {
             loader: "babel-loader",
             options: {
