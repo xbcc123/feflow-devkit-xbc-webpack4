@@ -359,7 +359,7 @@ class Builder {
    */
   setExternalPlugin(externals) {
 	  const newExternals = externals
-	//   console.log(newExternals)
+	  console.log(newExternals)
       return new HtmlWebpackExternalsPlugin({externals: newExternals});
   }
 
