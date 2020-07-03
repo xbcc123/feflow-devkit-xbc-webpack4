@@ -26,23 +26,23 @@ export function removeRepeat(arr, key) {
 
 // 合并key相同的数据 单个options配置的数据优先
 export function singleKey(arr, key) {
-	let arr1 = [],
+	let resultArr = [],
 		obj = {}
-	for (let item of arr) {
+	arr.forEach((item, index) => {
 		if (!item[key]) {
-			item[key] = parseInt(Math.random()* 100000000)
+			item[key] =  index + "a" +  parseInt(Math.random()* 100000000) // 防止元素顺序改变
 		}
 		obj[item[key]] = item
-	}
+	})
 	for (let key in obj) {
 		if (obj.hasOwnProperty(key)) {
-			arr1.push(obj[key])
+			resultArr.push(obj[key])
 		}
 	}
-	return arr1
+	return resultArr
 }
 
-//  遍历每一个属性
+//  深拷贝 执行数组去重
 export function deepCloneUnique(obj, currentKey) {
 	let result = typeof obj.splice === "function" ? [] : {}
 	if (obj && typeof obj === "object") {
