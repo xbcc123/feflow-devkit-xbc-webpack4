@@ -1,15 +1,9 @@
-const cssnano = require("cssnano");
+// const cssnano = require("cssnano");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const TerserPlugin = require("terser-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackExternalsPlugin = require("html-webpack-externals-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const baseConfig = require("./webpack.base.config");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
 const CompressionPlugin = require("compression-webpack-plugin");
-// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const prodConfig = {
   mode: "production",
@@ -75,9 +69,10 @@ const prodConfig = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "static/css/[name].[contenthash].css"
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: "static/css/[name].[contenthash].css"
+	// }),
+
     // new CompressionPlugin({
     //   asset: "[path].gz[query]",
     //   algorithm: "gzip",
@@ -86,25 +81,6 @@ const prodConfig = {
     //   minRatio: 0
     // }),
 
-    // new BundleAnalyzerPlugin()
-    // new OptimizeCSSAssetsPlugin({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: cssnano,
-    // }),
-    // new HtmlWebpackExternalsPlugin({
-    //   externals: [
-    //     {
-    //       module: 'react',
-    //       entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
-    //       global: 'React',
-    //     },
-    //     {
-    //       module: 'react-dom',
-    //       entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
-    //       global: 'ReactDOM',
-    //     },
-    //   ],
-    // }),
     new webpack.HashedModuleIdsPlugin({
       hashFunction: 'sha256',
       hashDigest: 'hex',
@@ -136,9 +112,8 @@ const prodConfig = {
           // reuseExistingChunk: true
         },
         common: {
-          // ‘src/js’ 下的js文件
           chunks: "all",
-          test: /[\\/]skyConfig[\\/]/, //也可以值文件/[\\/]src[\\/]js[\\/].*\.js/,
+          test: /[\\/]skyConfig[\\/]/,
           name: "common", //生成文件名，依据output规则
           minChunks: 1,
           maxInitialRequests: 5,
@@ -148,9 +123,8 @@ const prodConfig = {
           reuseExistingChunk: true
         },
         public: {
-          // ‘src/js’ 下的js文件
           chunks: "initial",
-          test: /[\\/]publicResource[\\/]publicUtils[\\/]/, //也可以值文件/[\\/]src[\\/]js[\\/].*\.js/,
+          test: /[\\/]publicResource[\\/]publicUtils[\\/]/,
           name: "public", //生成文件名，依据output规则
           minChunks: 1,
           maxInitialRequests: 5,
@@ -160,9 +134,8 @@ const prodConfig = {
           reuseExistingChunk: true
         },
         router: {
-          // ‘src/js’ 下的js文件
           chunks: "all",
-          test: /[\\/]router[\\/]/, //也可以值文件/[\\/]src[\\/]js[\\/].*\.js/,
+          test: /[\\/]router[\\/]/,
           name: "public", //生成文件名，依据output规则
           minChunks: 1,
           maxInitialRequests: 5,
@@ -172,7 +145,6 @@ const prodConfig = {
           reuseExistingChunk: true
         },
         store: {
-          // ‘src/js’ 下的js文件
           chunks: "all",
           test: /[\\/]store[\\/]/, //也可以值文件/[\\/]src[\\/]js[\\/].*\.js/,
           name: "public", //生成文件名，依据output规则
@@ -214,12 +186,12 @@ const prodConfig = {
           safari10: false
         }
       }),
-      new OptimizeCSSAssetsPlugin({
-        // 压缩css
-        cssProcessorOptions: {
-          safe: true
-        }
-      })
+    //   new OptimizeCSSAssetsPlugin({
+    //     // 压缩css
+    //     cssProcessorOptions: {
+    //       safe: true
+    //     }
+    //   })
     ]
   }
 };
