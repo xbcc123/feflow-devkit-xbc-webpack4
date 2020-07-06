@@ -44,21 +44,8 @@ function getConfig(options, env) {
  */
 export function run(ctx, options) {
 	importConfig = getConfig(ctx.projectConfig, options.env)
-	// console.log(importConfig)
 	config = merge(currentConfig, build.createDevConfig(importConfig))
 
-	// webpack(config, (err, stats) => {
-	//   if (err) {
-	//       console.log(err);
-	//   }
-	//   console.log(
-	//       stats.toString({
-	//         chunks: false,
-	//         colors: true,
-	//         children: false
-	//       })
-	//   );
-	// });
 	const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))
 	spinner.start()
 	webpack(config, (err, stats) => {
@@ -85,9 +72,5 @@ export function run(ctx, options) {
 			process.exit(1)
 		}
 		console.log(chalk.cyan("  Build complete.\n"))
-		// console.log(chalk.yellow(
-		//   '  Tip: built files are meant to be served over an HTTP server.\n' +
-		//   '  Opening index.html over file:// won\'t work.\n'
-		// ))
 	})
 }

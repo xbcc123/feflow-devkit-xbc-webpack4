@@ -78,17 +78,4 @@ module.exports = ctx => {
 			chalk.cyan(`ctrl+鼠标左键点开这个链接愉快的玩耍吧:http://${myHost}:${devServerOptions.port}`)
 		)
 	})
-
-	// webpack(config, (err, stats) => {
-	//   if (err) {
-	//     console.log(err);
-	//   }
-	//   console.log(
-	//     stats.toString({
-	//       chunks: false,
-	//       colors: true,
-	//       children: false
-	//     })
-	//   );
-	// });
 }
