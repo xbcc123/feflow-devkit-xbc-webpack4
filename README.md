@@ -63,7 +63,15 @@ cnpm install @feflow/cli -g
            "builder": "feflow-devkit-xbc-webpack4:build",
            "options": {
              "port": 8003,
-             "isMinicss": true
+             "isMinicss": true,
+			  externals: [
+                {
+					optionsId: 100,  //  xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
+                    module: "antd",
+                    entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
+                    global: "antd"     
+                },
+          	   ],
            }
          }
        },
@@ -81,6 +89,7 @@ cnpm install @feflow/cli -g
          },
          externals: [
                 {
+					optionsId: 100,  //  xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
                     module: "antd",
                     entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
                     global: "antd"     
@@ -127,6 +136,7 @@ cnpm install @feflow/cli -g
    
 
 ### 命令
+> 根据作者目前公司配置的环境 可以只使用其中一部分
 
 ```sh
 $ fef dev      # 本地开发时的命令
@@ -143,7 +153,7 @@ $ fef build    # 发布时的打包命令生产环境
 
 ##  本地调试方式
 
-待定
+咨询开发者287207951@qq.com
 
 ##  贡献代码方式
 
