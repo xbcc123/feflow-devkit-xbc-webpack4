@@ -166,7 +166,12 @@ cnpm install @feflow/cli -g
 | externals   | externals配置                           | true | array  | []     |
 | envs        | 环境变量配置 目前只支持固定环境变量配置 | true | object | {}     |
 
+### *配置注意事项
 
+- 单个环境的配置比commons中的配置优先级高
+
+- 类似externals这种对象数组的配置在commons和单个环境中同时存在时，插件会将optionsId相同的配置去重
+- 目前只支持固定环境变量配置
 
 ### 配置文件demo
 [Vue项目配置](./vueDemo/.feflowrc.js)
