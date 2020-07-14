@@ -169,7 +169,7 @@ cnpm install @feflow/cli -g
 
 
 ### 配置文件demo
-[Vue项目配置](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/vueDemo/.feflowrc.js)
+[Vue项目配置](./vueDemo/.feflowrc.js)
 
 [React项目配置](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/reactDemo/feflow-devkit-xbc-webpack4/.feflowrc.js)
 
