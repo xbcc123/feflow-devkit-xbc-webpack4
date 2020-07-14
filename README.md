@@ -133,7 +133,46 @@ cnpm install @feflow/cli -g
    
 ```
 
-   
+
+
+### API
+
+| 参数     | 说明         | 必须 | 类型   | 默认值 |
+| -------- | ------------ | ---- | ------ | ------ |
+| commands | 脚本配置命令 | true | object | {}     |
+| commons  | 面包屑路径   | true | object | {}     |
+
+
+
+#### commands
+| 参数        | 说明                          | 必须 | 类型   | 默认值 |
+| ----------- | ----------------------------- | ---- | ------ | ------ |
+| dev,test... | 对应不同的环境                | true | object | {}     |
+| builder     | 对应不同的脚本                | true | object | {}     |
+| options     | 项目具体配置对应commons中参数 | true | object | {}     |
+
+
+
+### commons
+| 参数        | 说明                                    | 必须 | 类型   | 默认值 |
+| ----------- | --------------------------------------- | ---- | ------ | ------ |
+| entry       | webpack编译入口，例子index.tsx          | true | string | 无     |
+| isModule    | 开启css模块化 (vue项目不需要开启)       | true | object | {}     |
+| isMinicss   | 是否需要抽离css (本地调试环境不需要)    | true | object | {}     |
+| hasAnalyzer | 是否开启webpack包大小的调试             | true | object | {}     |
+| analyzer    | analyzer调试包的配置                    | true | object | {}     |
+| port        | webpack静态服务器启动端口号             | true | number | 无     |
+| alias       | webpack别名配置                         | true | object | {}     |
+| externals   | externals配置                           | true | array  | []     |
+| envs        | 环境变量配置 目前只支持固定环境变量配置 | true | object | {}     |
+
+
+
+### 配置文件demo
+[Vue项目配置](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/vueDemo/.feflowrc.js)
+
+[React项目配置](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/reactDemo/feflow-devkit-xbc-webpack4/.feflowrc.js)
+
 
 ### 命令
 > 根据作者目前公司配置的环境 可以只使用其中一部分
