@@ -166,6 +166,16 @@ cnpm install @feflow/cli -g
 | externals   | externals配置                           | true | array  | []     |
 | envs        | 环境变量配置 目前只支持固定环境变量配置 | true | object | {}     |
 
+### 配置说明
+- 项目中需要用到的技术栈和UI框架建议使用externals插件配置
+- Vue项目
+	- 配置isModule为false
+	
+
+- React项目
+	- 配置isModule为true
+	
+	
 ### *配置注意事项
 
 - 单个环境的配置比commons中的配置优先级高
