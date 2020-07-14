@@ -28,108 +28,112 @@ cnpm install @feflow/cli -g
 
 在项目根目录添加 `feflow.json` 或者 `feflow.js`  配置文件
 
-```json
-   # feflowrc.json
+```js
+   # feflowrc.js
    
-   {
-     "devkit": {
-       "commands": {// fef命令配置 dev, test...
-         "dev": {  
-           "builder": "feflow-devkit-xbc-webpack4:dev",
-           "options": {	// 配置单独配置 配置项参考下面公用配置项
-             "isMinicss": false,
-             "port": 8013
-           } 
-         },
-         "test": {
-           "builder": "feflow-devkit-xbc-webpack4:test",
-           "options": {
-             "isMinicss": true
-           }
-         },
-         "formalTest": {
-           "builder": "feflow-devkit-xbc-webpack4:formalTest",
-           "options": {
-             "isMinicss": true
-           }
-         },
-         "demo": {
-           "builder": "feflow-devkit-xbc-webpack4:demo",
-           "options": {
-             "isMinicss": true
-           }
-         },
-         "build": {
-           "builder": "feflow-devkit-xbc-webpack4:build",
-           "options": {
-             "port": 8003,
-             "isMinicss": true,
-			  externals: [
-                {
-					optionsId: 100,  //  xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
-                    module: "antd",
-                    entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
-                    global: "antd"     
+{
+    "devkit": {
+        "commands": {
+            "dev": {
+                "builder": "feflow-devkit-xbc-webpack4:dev",
+                "options": { // 配置单独配置 配置项参考下面公用配置项
+                    "isMinicss": false,
+                    "port": 8013
+                }
+            },
+            "test": {
+                "builder": "feflow-devkit-xbc-webpack4:test",
+                "options": {
+                    "isMinicss": true
+                }
+            },
+            "formalTest": {
+                "builder": "feflow-devkit-xbc-webpack4:formalTest",
+                "options": {
+                    "isMinicss": true
+                }
+            },
+            "demo": {
+                "builder": "feflow-devkit-xbc-webpack4:demo",
+                "options": {
+                    "isMinicss": true
+                }
+            },
+            "build": {
+                "builder": "feflow-devkit-xbc-webpack4:build",
+                "options": {
+                    "port": 8003,
+                    "isMinicss": true,
+                    externals: [{
+                        optionsId: 100, // xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
+                        module: "antd",
+                        entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
+                        global: "antd"
+                    }, {
+                        module: "Vue",
+                        entry: "",
+                        global: "vue"
+                    }, ],
+                }
+            }
+        },
+        "commons": { // 此处为公用配置
+            "entry": "main.js", // 配置项目webpack 编译入口
+            "isModule": false, // 开启css模块化 (vue项目不需要开启)
+            "isMinicss": true, // 是否需要抽离css (本地调试环境不需要)		
+            "hasAnalyzer": false, // 是否开启webpack包大小的调试
+            "analyzerOptions": { // 调试包的配置
+                "analyzerPort": 3478
+            },
+            "port": 1234, // webpack静态服务器启动端口号
+            "alias": { // webpack别名配置
+                "@": "src",
+            },
+            externals: [{
+                optionsId: 100, //  xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
+                module: "antd",
+                entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
+                global: "antd"
+            }, {
+                module: "Vue",
+                entry: "",
+                global: "vue"
+            }, ],
+            "envs": { // 环境变量配置 目前只支持固定环境变量配置
+                "dev": {
+                    "envObj": {
+                        "NODE_ENV": "\"development\"",
+                        "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+                    }
                 },
-          	   ],
-           }
-         }
-       },
-       "commons": {// 此处为公用配置
-         "entry": "main.js",// 配置项目webpack 编译入口
-         "isModule": false,	// 开启css模块化 (vue项目不需要开启)
-         "isMinicss": true,	// 是否需要抽离css (本地调试环境不需要)		
-         "hasAnalyzer": false,// 是否开启webpack包大小的调试
-         "analyzerOptions": {	// 调试包的配置
-             "analyzerPort": 3478
-         },
-         "port": 1234,// webpack静态服务器启动端口号
-         "alias": {// webpack别名配置
-           "@": "src",
-         },
-         externals: [
-                {
-					optionsId: 100,  //  xbc会将 optionsId 一致的配置去重，用作公共配置和单个配置的 去重
-                    module: "antd",
-                    entry: "https://cdn.bootcss.com/antd/3.26.12/antd.min.js",
-                    global: "antd"     
+                "test": {
+                    "envObj": {
+                        "NODE_ENV": "\"test\"",
+                        "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+                    }
                 },
-          ],
-         "envs": {// 环境变量配置 目前只支持固定环境变量配置
-           "dev": {
-             "envObj": {
-               "NODE_ENV": "\"development\"",
-               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
-             }
-           },
-           "test": {
-             "envObj": {
-               "NODE_ENV": "\"test\"",
-               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
-             }
-           },
-           "formalTest": {
-             "envObj": {
-               "NODE_ENV": "\"formalTest\"",
-               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
-             }
-           },
-           "demo": {
-             "envObj": {
-               "NODE_ENV": "\"demo\"",
-               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
-             }
-           },
-           "build": {
-             "envObj": {
-               "NODE_ENV": "\"production\"",
-               "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
-             }
-           }
-         }
-       }
-     }
-   }
+                "formalTest": {
+                    "envObj": {
+                        "NODE_ENV": "\"formalTest\"",
+                        "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+                    }
+                },
+                "demo": {
+                    "envObj": {
+                        "NODE_ENV": "\"demo\"",
+                        "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+                    }
+                },
+                "build": {
+                    "envObj": {
+                        "NODE_ENV": "\"production\"",
+                        "API_HOST": "\"http://xxx.xxx.xx.x:xxxx\"",
+                    }
+                }
+            }
+        }
+    }
+}
    
 ```
 
