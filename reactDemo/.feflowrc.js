@@ -63,36 +63,32 @@ module.exports = {
                 dev: {
                     envObj: {
                         NODE_ENV: "'development'",
-                        API_HOST: "'http://192.168.16.103:8080'",
-                        imageUrl: "'http://192.168.16.103:9999'"
+                         API_HOST: "'http://xxx.xxx.xx.xxx:xxx'",
                     }
                 },
                 test: {
                     envObj: {
                         NODE_ENV: "'test'",
-                        API_HOST: "'http://192.168.16.103:8080'",
-                        imageUrl: "'http://192.168.16.103:8080'"
+                       API_HOST: "'http://xxx.xxx.xx.xxx:xxx'",
                     }
                 },
                 formalTest: {
                     envObj: {
                         NODE_ENV: "'formalTest'",
-                        API_HOST: "'http://192.168.16.103:8080'",
-                        imageUrl: "'http://192.168.16.103:8080'"
+                        API_HOST: "'http://xxx.xxx.xx.xxx:xxx'",
                     }
                 },
                 demo: {
                     envObj: {
                         NODE_ENV: "'demo'",
-                        API_HOST: "'http://192.168.16.103:8080'",
-                        imageUrl: "'http://192.168.16.103:8080'"
+                        API_HOST: "'http://xxx.xxx.xx.xxx:xxx'",
                     }
                 },
                 build: {
                     envObj: {
                         NODE_ENV: "'production'",
-                        API_HOST: "'https://zchd.ezdiamond.cn/'",
-                        imageUrl: "'http://192.168.16.103:9999/'"
+                        API_HOST: "'http://xxx.xxx.xx.xxx:xxx'",
+               
                     }
                 }
             }
