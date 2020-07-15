@@ -13,6 +13,8 @@ feflow-devkit-webpack4 为feflow套件 支持编译指定React，Vue项目模板
 
 - 目前支持多个环境配置（dev， test，formalTest，demo,  prod ）
 
+  
+
 
 ## 开始使用
 
@@ -171,13 +173,32 @@ cnpm install @feflow/cli -g
 ### 配置说明
 - 项目中需要用到的技术栈和UI框架建议使用externals插件配置
 - Vue项目
+	
 	- 配置isModule为false
 	
-
 - React项目
 	- 配置isModule为true
 	
+	  
 	
+### 模板 
+
+#####  搭配套件使用的模板
+- [generator-xbc-react](https://github.com/xbcc123/generator-xbc-react) React后台管理模板
+	- 配置TS
+	- mobx
+	- ant4
+- [generator-xbc-vue](https://github.com/xbcc123/generator-xbc-vue) Vue后台管理模板
+	- 配置TS
+	- Vuex
+	- element	
+- [generator-xbc-wechat ](https://github.com/xbcc123/generator-xbc-wechat)  微信小程序模板
+	- vant
+	- mobx
+
+#####  自定义模板
+- [开发模板](https://github.com/Tencent/feflow/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E6%96%87%E6%A1%A3)
+
 ### *配置注意事项
 
 - 单个环境的配置比commons中的配置优先级高
@@ -201,10 +222,6 @@ $ fef formalTest   # 发布时的打包命令测试测试
 $ fef demo     # 发布时的打包命令演示环境
 $ fef build    # 发布时的打包命令生产环境
 ```
-
-## 文档
-
-待定
 
 
 ##  本地调试方式
