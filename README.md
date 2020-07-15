@@ -183,6 +183,13 @@ cnpm install @feflow/cli -g
 	
 ### 模板 
 
+##### 模板使用方式
+```shell
+	fef install generator-**
+	fef init 
+```
+
+
 #####  搭配套件使用的模板
 - [generator-xbc-react](https://github.com/xbcc123/generator-xbc-react) React后台管理模板
 	- 配置TS
