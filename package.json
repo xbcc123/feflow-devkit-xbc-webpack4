@@ -4,11 +4,10 @@
   "description": "中谷科技webpack4编译套件",
   "main": "index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/babel libs --out-dir lib --presets=@babel/env",
-    "b": "./node_modules/.bin/babel libs --out-dir lib --presets=@babel/env",
+    "prepublish": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
+    "b": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
     "test": "istanbul cover ./node_modules/.bin/_mocha",
-    "eslint": "eslint ./lib --fix",
-    "dll": "sudo webpack --config ./lib/webpack/webpack.dll.config.js"
+    "eslint": "eslint ./lib --fix"
   },
   "husky": {
     "hooks": {
