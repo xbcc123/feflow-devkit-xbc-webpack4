@@ -38,14 +38,12 @@ function getConfig(options, env) {
  * @desc     创建用于开发过程中的webpack打包配置
  *
  * @param {Object}  options                         参数
- * @param {Boolean} options.name               是否启用px2rem
  *
  * @example
  */
 export function run(ctx, options) {
 	importConfig = getConfig(ctx.projectConfig, options.env)
-	config = merge(currentConfig, build.createDevConfig(importConfig))
-
+	config = merge(currentConfig, build.createProdConfig(importConfig))
 	const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))
 	spinner.start()
 	webpack(config, (err, stats) => {

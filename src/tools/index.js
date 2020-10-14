@@ -30,7 +30,7 @@ export function singleKey(arr, key) {
 		obj = {}
 	arr.forEach((item, index) => {
 		if (!item[key]) {
-			item[key] =  index + "a" +  parseInt(Math.random()* 100000000) // 防止元素顺序改变
+			item[key] = index + "a" + parseInt(Math.random() * 100000000) // 防止元素顺序改变
 		}
 		obj[item[key]] = item
 	})
