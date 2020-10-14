@@ -1,6 +1,6 @@
 {
   "name": "feflow-devkit-xbc-webpack4",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "中谷科技webpack4编译套件",
   "main": "index.js",
   "scripts": {
