@@ -2,7 +2,6 @@ import path from "path"
 import glob from "glob"
 import webpack from "webpack"
 import fs from "fs"
-// import osenv from "osenv";
 // import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import HtmlWebpackExternalsPlugin from "html-webpack-externals-plugin"
