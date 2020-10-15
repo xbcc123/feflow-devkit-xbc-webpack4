@@ -339,9 +339,7 @@ class Builder {
 
 		// 是否启动打包性能分析
 		if (options.hasAnalyzer) {
-			mixPlugins.push(
-				this.setBundleSnalyzerPlugin(options.analyzer)
-			)
+			mixPlugins.push(this.setBundleSnalyzerPlugin(options.analyzer))
 		}
 
 		mixConfig.entry = this.setEntry(options.entry)

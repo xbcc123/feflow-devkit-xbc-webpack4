@@ -75,7 +75,9 @@ module.exports = ctx => {
 
 	server.listen(devServerOptions.port, myHost, () => {
 		console.log(
-			chalk.cyan(`ctrl+鼠标左键点开这个链接愉快的玩耍吧:http://${myHost}:${devServerOptions.port}`)
+			chalk.cyan(
+				`ctrl+鼠标左键点开这个链接愉快的玩耍吧:http://${myHost}:${devServerOptions.port}`
+			)
 		)
 	})
 }

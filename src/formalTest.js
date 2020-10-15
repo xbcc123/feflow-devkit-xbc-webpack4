@@ -1,8 +1,8 @@
-import { run } from "./build.js";
+import { run } from "./build.js"
 
 module.exports = ctx => {
-  let runParams = {
-    env: "formalTest"
-  };
-  run(ctx, runParams);
-};
+	let runParams = {
+		env: "formalTest"
+	}
+	run(ctx, runParams)
+}
