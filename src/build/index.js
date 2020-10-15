@@ -340,7 +340,7 @@ class Builder {
 		// 是否启动打包性能分析
 		if (options.hasAnalyzer) {
 			mixPlugins.push(
-				this.setBundleSnalyzerPlugin(options.analyzerOptions)
+				this.setBundleSnalyzerPlugin(options.analyzer)
 			)
 		}
 
@@ -364,13 +364,14 @@ class Builder {
 	}
 
 	// 设置打包优化
-	setBundleSnalyzerPlugin(analyzerOptions) {
-		if (!analyzerOptions || JSON.stringify(analyzerOptions) === "{}") {
-			analyzerOptions = {
+	setBundleSnalyzerPlugin(analyzer) {
+		// console.log(analyzer)
+		if (!analyzer || JSON.stringify(analyzer) === "{}") {
+			analyzer = {
 				analyzerPort: "4321"
 			}
 		}
-		return new BundleAnalyzerPlugin(analyzerOptions)
+		return new BundleAnalyzerPlugin(analyzer)
 	}
 
 	// 设置别名
