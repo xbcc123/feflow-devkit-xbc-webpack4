@@ -214,9 +214,9 @@ cnpm install @feflow/cli -g
 - 目前只支持固定环境变量配置
 
 ### 配置文件demo
-[Vue项目配置](./vueDemo/.feflowrc.js)
+[Vue项目配置](./example/vue/.feflowrc.js)
 
-[React项目配置](./reactDemo/.feflowrc.js)
+[React项目配置](./example/react/.feflowrc.js)
 
 
 ### 命令
@@ -230,6 +230,10 @@ $ fef demo     # 发布时的打包命令演示环境
 $ fef build    # 发布时的打包命令生产环境
 ```
 
+## 发布日志
+
+本项目遵从 [Semantic Versioning](http://semver.org/).
+每次发布信息都会在 Github 的 [Releases](./CHANGELOG.md) 中呈现.
 
 ##  本地调试方式
 
