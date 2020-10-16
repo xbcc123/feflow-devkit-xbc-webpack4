@@ -1,3 +1,13 @@
+## [0.0.41](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.0.40...0.0.41) (2020-10-16)
+
+
+### Features
+
+* 修改md文档 ([cf57370](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/cf57370be968af8e0021104f49e4072ca907fe01))
+* 增加版本号 ([735744a](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/735744a3bc68e141c6160cce109dfb8539fe85ae))
+
+
+
 ## [0.0.40](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/bf03eed6c49a260916c090a71a46da39c0fa06b9...0.0.40) (2020-10-16)
 
 
