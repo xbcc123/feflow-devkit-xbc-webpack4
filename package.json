@@ -1,6 +1,6 @@
 {
   "name": "feflow-devkit-xbc-webpack4",
-  "version": "0.0.35",
+  "version": "0.0.38",
   "description": "webpack4编译套件",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
     "b": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
     "test": "jest",
     "eslint": "eslint ./src --fix",
-	"jest": "jest",
-	"jestcov": "jest --coverage",
-	"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "jest": "jest",
+    "jestcov": "jest --coverage",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "husky": {
     "hooks": {
-	  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-	  "pre-push": "npm run jest"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run jest"
     }
   },
   "repository": {
@@ -41,10 +41,10 @@
     "jest": "^26.5.3"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
@@ -57,6 +57,7 @@
     "@types/node": "^13.9.0",
     "@types/webpack": "^4.41.7",
     "assert": "^2.0.0",
+    "async-each": "^1.0.3",
     "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "cache-loader": "^4.1.0",
@@ -131,7 +132,7 @@
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.10.3",
+    "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.2",
     "webpack-subresource-integrity": "1.4.0"
