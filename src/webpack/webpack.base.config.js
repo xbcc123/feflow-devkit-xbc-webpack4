@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
-// const threadLoader = require("thread-loader");
+// const threadLoader = require("thread-loader"); // 开始多线程主要针对js 会增加服务器构建压力
 
 const projectRoot = process.cwd()
 
