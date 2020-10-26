@@ -1,0 +1,10 @@
+{
+	"originUrl": "http://192.168.33.79:5676/v2/api-docs",
+	"templatePath": "./pontTemplateCus",
+	"outDir": "./src/services",
+	"surrounding": "javaScript",
+	"mocks": {
+	  "enable": true
+	},
+	"templateType": "fetch"
+  }

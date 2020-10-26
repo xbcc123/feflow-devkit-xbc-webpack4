@@ -1,0 +1,58 @@
+{
+  "name": "vue_mana",
+  "version": "1.0.1",
+  "description": "Vue后台管理项目",
+  "private": true,
+  "scripts": {
+    "build": "fef build",
+    "check-types": "tsc",
+    "start": "webpack-dev-server --watch --progress --open --config build/webpack.dev.conf.js"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Shawn",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "autoprefixer": "^9.4.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.2.5",
+    "mockjs": "^1.1.0",
+    "pont-engine": "1.0.3",
+    "typescript": "^3.9.7",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "wl-explorer": "^0.1.9"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

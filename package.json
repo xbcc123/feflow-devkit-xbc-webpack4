@@ -6,7 +6,6 @@
   "scripts": {
     "prepublish": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
     "b": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
-    "test": "jest",
     "eslint": "eslint ./src --fix",
     "jest": "jest",
     "jestcov": "jest --coverage",

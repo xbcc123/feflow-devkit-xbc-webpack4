@@ -1,0 +1,49 @@
+.asideWrap {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	margin-top: 35px;
+	width: 150px;
+	h1 {
+		font-size: 16px;
+	}
+	> div {
+		font-size: 14px;
+		margin-top: 10px;
+		> span {
+			&:hover {
+				color: #d99c37;
+				cursor: pointer;
+			}
+			&.active {
+				color: #d99c37;
+				cursor: pointer;
+			}
+			&.on {
+				color: #d99c37;
+			}
+		}
+	}
+	.slideTit {
+		margin-right: 20px;
+	}
+
+	.pLi {
+		color: #888;
+		margin-left: 20px;
+		> p {
+			margin-top: 10px;
+			&:hover {
+				color: #d99c37;
+				cursor: pointer;
+			}
+			&.active {
+				color: #d99c37;
+				cursor: pointer;
+			}
+			&.on {
+				color: #d99c37;
+			}
+		}
+	}
+}

@@ -1,0 +1,287 @@
+/*  横向  */
+
+.f {
+    display: flex;
+}
+
+.f1 {
+    flex: 1
+}
+
+.fw { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fa {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fend {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fs {
+    display: flex;
+    align-items: center;
+}
+
+.fc {
+    display: flex;
+    justify-content: center;
+}
+
+.fr {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 横线 */
+
+
+/*  
+.hr {
+  border-bottom: 1px solid #eee;
+} */
+
+
+/* mt */
+
+.mt10 {
+    margin-top: 10px;
+} 
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+
+/* mb */
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb80 {
+    margin-bottom: 80px;
+}
+
+
+/* ml */
+
+.ml10 {
+    margin-left: 20px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+
+/* mr */
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mr30 {
+    margin-right: 30px;
+}
+
+.mr40 {
+    margin-right: 40px;
+}
+
+
+/* pt */
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.pt30 {
+    padding-top: 30px;
+}
+
+.pt40 {
+    padding-top: 40px;
+}
+
+
+/* pb */
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+
+.pb40 {
+    padding-bottom: 40px;
+}
+
+
+/* 字号 */
+
+.f30 {
+    font-size: 30px;
+}
+
+
+
+.f18 {
+    font-size: 18px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.f10 {
+    font-size: 10px;
+}
+
+.fbold {
+    font-weight: bold;
+}
+
+.cursor:hover {
+    cursor: pointer;
+}
+
+.c9 {
+    color: #999;
+}
+
+.c6 {
+    color: #666;
+}
+
+.c3 {
+    color: #333;
+}
+
+.cd {
+    color: #21949b;
+}
+
+.bcf7 {
+    background-color: #f7f7f7;
+}
+
+
+/* 文字溢出 */
+
+.overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.overflows {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+
+/* 自适应的横线  */
+
+.hr {
+    position: relative;
+}
+
+.hr::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 1px;
+    background: #e6e6e6;
+    top: 50%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.nohr::after {
+    height: 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hr::after {
+        transform: scaleY(0.5);
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .hr::after {
+        transform: scaleY(0.33);
+    }
+}
+
+.cursor:hover {
+    cursor: pointer;
+}

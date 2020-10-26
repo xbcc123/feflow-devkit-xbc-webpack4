@@ -1,0 +1,39 @@
+#hotParameter {
+    section {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        .form-item {
+            .ant-row.ant-form-item {
+                width: 22%;
+            }
+        }
+        .btn-left {
+            margin-right: 20px;
+        }
+    }
+    aside {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        width: 470px;
+        min-height: 300px;
+        height: 100%;
+        background: #fff;
+        border: 1px solid #eee;
+        .asi-attr {
+            height: 40px;
+            border-bottom: 1px solid #efefef;
+            .left {
+                font-size: 16px;
+                margin-right: 40px;
+                width: 230px;
+                padding-left: 10px;
+            }
+        }
+        .noHot {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    }
+}
