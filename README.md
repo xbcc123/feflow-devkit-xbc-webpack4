@@ -244,10 +244,6 @@ $ fef build    # 发布时的打包命令生产环境
 ```
 	npm run changelog
 ```
-3. 升级npm
-```
-	npm run publish
-```
 
 ## 发布日志
 

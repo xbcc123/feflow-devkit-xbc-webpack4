@@ -1,3 +1,29 @@
+## [0.0.44](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/v0.0.42...0.0.44) (2020-10-26)
+
+
+### Bug Fixes
+
+* release无法执行 ([f41a304](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/f41a304f91021ea136ccdd72597e935988ee5b7a))
+
+
+### Features
+
+* 增加release配置 ([f0bb594](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/f0bb59474fb6d392c45f1e449fd4fecabe360828))
+
+
+
+## [0.0.42](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.0.41...v0.0.42) (2020-10-26)
+
+
+### Features
+
+*  增加版本号 ([2fd5312](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/2fd5312e8897305dabf9acf87dbc85dcb2a99d72))
+* 修改license ([3329d2a](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/3329d2aeb1adc17abd3611c10344a52aee5c9655))
+* 增加travis配置 ([767faaa](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/767faaaabddf89afd9a682bed43b3db5f045caba))
+* 增加测试模板 ([d60bd49](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/d60bd49ed32b40c7024bb235ea10e3b8fb44e691))
+
+
+
 ## [0.0.41](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.0.40...0.0.41) (2020-10-16)
 
 
