@@ -1,6 +1,6 @@
 {
   "name": "feflow-devkit-xbc-webpack4",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "webpack4编译套件",
   "main": "index.js",
   "scripts": {
