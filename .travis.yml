@@ -11,5 +11,5 @@ node_js: stable
 install:
    - npm install
    - npm run jest
-script:
-    - npm run test
+# script:
+#     - npm run test
