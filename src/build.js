@@ -47,7 +47,7 @@ function getConfig(options, env) {
 export function run(ctx, options) {
 	importConfig = getConfig(ctx.projectConfig, options.env)
 	config = merge(currentConfig, build.createProdConfig(importConfig))
-	config = smp.wrap(config)
+	// config = smp.wrap(config) // 打包会使external失效
 	const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))
 	spinner.start()
 	webpack(config, (err, stats) => {
