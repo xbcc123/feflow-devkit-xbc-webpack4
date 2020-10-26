@@ -230,14 +230,30 @@ $ fef demo     # 发布时的打包命令演示环境
 $ fef build    # 发布时的打包命令生产环境
 ```
 
+### 本地调试
+
+[点击进入](./test/smoke/README.md)
+
+## 发布
+
+1. 发布版本
+```
+	npm run release
+```
+2. 生成CHANGELOG
+```
+	npm run changelog
+```
+3. 升级npm
+```
+	npm run publish
+```
+
 ## 发布日志
 
 本项目遵从 [Semantic Versioning](http://semver.org/).
 每次发布信息都会在 Github 的 [Releases](./CHANGELOG.md) 中呈现.
 
-##  本地调试方式
-
-咨询开发者287207951@qq.com
 
 ##  贡献代码方式
 
