@@ -107,7 +107,7 @@ const prodConfig = {
 		splitChunks: {
 			chunks: "all",
 			minSize: 0,
-			maxSize: 0,
+			maxSize: 200 * 1024,
 			minChunks: 1,
 			maxAsyncRequests: 6,
 			maxInitialRequests: 4,
@@ -127,42 +127,9 @@ const prodConfig = {
 					// priority: 100,
 					// reuseExistingChunk: true
 				},
-				common: {
-					chunks: "all",
-					test: /[\\/]skyConfig[\\/]/,
-					name: "common", //生成文件名，依据output规则
-					minChunks: 1,
-					maxInitialRequests: 5,
-					minSize: 0,
-					maxSize: 80 * 1024,
-					priority: 1,
-					reuseExistingChunk: true
-				},
-				public: {
-					chunks: "initial",
-					test: /[\\/]publicResource[\\/]publicUtils[\\/]/,
-					name: "public", //生成文件名，依据output规则
-					minChunks: 1,
-					maxInitialRequests: 5,
-					minSize: 0,
-					maxSize: 80 * 1024,
-					priority: 1,
-					reuseExistingChunk: true
-				},
 				router: {
 					chunks: "all",
 					test: /[\\/]router[\\/]/,
-					name: "public", //生成文件名，依据output规则
-					minChunks: 1,
-					maxInitialRequests: 5,
-					minSize: 0,
-					maxSize: 80 * 1024,
-					priority: 1,
-					reuseExistingChunk: true
-				},
-				store: {
-					chunks: "all",
-					test: /[\\/]store[\\/]/, //也可以值文件/[\\/]src[\\/]js[\\/].*\.js/,
 					name: "public", //生成文件名，依据output规则
 					minChunks: 1,
 					maxInitialRequests: 5,
