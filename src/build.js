@@ -2,6 +2,9 @@ const webpack = require("webpack")
 const ora = require("ora")
 const chalk = require("chalk")
 const currentConfig = require("./webpack/webpack.prod.config")
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin")
+const smp = new SpeedMeasurePlugin()
+
 const merge = require("webpack-merge")
 let config = {},
 	importConfig = {}
@@ -44,6 +47,7 @@ function getConfig(options, env) {
 export function run(ctx, options) {
 	importConfig = getConfig(ctx.projectConfig, options.env)
 	config = merge(currentConfig, build.createProdConfig(importConfig))
+	config = smp.wrap(config)
 	const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))
 	spinner.start()
 	webpack(config, (err, stats) => {
