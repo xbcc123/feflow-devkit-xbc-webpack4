@@ -406,7 +406,8 @@ class Builder {
 							  }
 							: false
 					}
-				}
+				},
+				"postcss-loader"
 			]
 		}
 	}
@@ -429,6 +430,7 @@ class Builder {
 							: false
 					}
 				},
+				"postcss-loader",
 				"less-loader"
 			]
 		}
@@ -452,6 +454,7 @@ class Builder {
 							: false
 					}
 				},
+				"postcss-loader",
 				"sass-loader"
 			]
 		}
@@ -475,6 +478,7 @@ class Builder {
 							: false
 					}
 				},
+				"postcss-loader",
 				"stylus-loader"
 			]
 		}
