@@ -8,6 +8,8 @@ cache:
     - node_modules
 
 node_js: stable
-install: 
-   - yarn
+install:
+   - npm install
    - npm run jest
+script:
+    - npm run test
