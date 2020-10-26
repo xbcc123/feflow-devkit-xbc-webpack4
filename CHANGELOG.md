@@ -1,3 +1,23 @@
+# [0.1.0](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.0.44...0.1.0) (2020-10-26)
+
+
+### Bug Fixes
+
+* 修復travis单元测试 ([e835e77](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/e835e777385389c4a5c1d8d1058dd81f334a3de9))
+
+
+### Features
+
+* 修改splitChunks ([c61f84d](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/c61f84d95b453790fe65f03ae5240b74eaa6dc5c))
+* 修改travis ([40e210e](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/40e210e914ff3030ac9dfaab525093e1e9441f8d))
+* 升级thread-loader版本 ([ba33950](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/ba33950c98e0371c746571f9f1fd19ece4b67d06))
+* 增加html单页情况下的压缩 ([9b904e4](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/9b904e49314bfe788b5b1888edde2da95ecf283e))
+* 增加postcss-loader  autoprefixer ([e692f6e](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/e692f6ef52993c6538e0b22eb7f1012a725bcbef))
+* 增加speed-measure-webpack-plugin速度优化插件 ([70ef242](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/70ef2420523b2f76f42f28db6898db4226044308))
+* 提交changelog ([387b73a](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/387b73a600b997cb7cc4524dc4221969c09ca804))
+
+
+
 ## [0.0.44](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/v0.0.42...0.0.44) (2020-10-26)
 
 
