@@ -9,7 +9,6 @@ cache:
 
 node_js: stable
 install:
-   - npm install
-   - npm run jest
+    - yarn
 script:
-    - npm run test
+    - npm run jest
