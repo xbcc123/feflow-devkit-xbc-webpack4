@@ -1,9 +1,11 @@
-// const cssnano = require("cssnano");
+const path = require("path")
 const webpack = require("webpack")
 const merge = require("webpack-merge")
 const TerserPlugin = require("terser-webpack-plugin")
 const baseConfig = require("./webpack.base.config")
 const CompressionPlugin = require("compression-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const projectRoot = process.cwd()
 
 const prodConfig = {
 	mode: "production",
@@ -81,6 +83,20 @@ const prodConfig = {
 		//   minRatio: 0
 		// }),
 
+		// 压缩html
+		new HtmlWebpackPlugin({
+			filename: "index.html",
+			template: path.join(projectRoot, "index.html"),
+			inject: true,
+			minify: {
+				html5: true,
+				collapseWhitespace: true,
+				preserveLineBreaks: false,
+				minifyCSS: true,
+				minifyJS: true,
+				removeComments: false
+			}
+		}),
 		new webpack.HashedModuleIdsPlugin({
 			hashFunction: "sha256",
 			hashDigest: "hex",
@@ -186,12 +202,6 @@ const prodConfig = {
 					safari10: false
 				}
 			})
-			//   new OptimizeCSSAssetsPlugin({
-			//     // 压缩css
-			//     cssProcessorOptions: {
-			//       safe: true
-			//     }
-			//   })
 		]
 	}
 }
