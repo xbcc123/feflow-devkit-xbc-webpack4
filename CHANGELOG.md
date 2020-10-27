@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.1.0...0.1.1) (2020-10-27)
+
+
+### Bug Fixes
+
+* build失败 ([2d4e0cc](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/2d4e0cceff648a28223c6a4e605e48eb6596e438))
+
+
+
 # [0.1.0](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.0.44...0.1.0) (2020-10-26)
 
 
