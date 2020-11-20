@@ -413,6 +413,7 @@ class Builder {
 	}
 
 	setLessRule(isModule, isMinicss) {
+		console.log(isModule, isMinicss)
 		return {
 			test: /\.less$/,
 			use: [
@@ -431,7 +432,14 @@ class Builder {
 					}
 				},
 				"postcss-loader",
-				"less-loader"
+				{
+					loader: "less-loader",
+					options: {
+						lessOptions: {
+							javascriptEnabled: true
+						}
+					}
+				}
 			]
 		}
 	}

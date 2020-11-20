@@ -96,11 +96,6 @@ const prodConfig = {
 				minifyJS: true,
 				removeComments: false
 			}
-		}),
-		new webpack.HashedModuleIdsPlugin({
-			hashFunction: "sha256",
-			hashDigest: "hex",
-			hashDigestLength: 20
 		})
 	],
 	optimization: {
