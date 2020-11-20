@@ -1,3 +1,21 @@
+## [0.1.3](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.1.2...0.1.3) (2020-11-20)
+
+
+### Features
+
+* 修复less-loader无法加入函数 ([1a9d63c](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/1a9d63cd2e21f45780ab517e19e522e265ee25bb))
+
+
+
+## [0.1.2](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.1.1...0.1.2) (2020-11-04)
+
+
+### Features
+
+* 删除mockjs ([45098ed](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/commit/45098ed170a3f4ae4a7cd5a0a22bc79732c7824d))
+
+
+
 ## [0.1.1](https://github.com/xbcc123/feflow-devkit-xbc-webpack4/compare/0.1.0...0.1.1) (2020-10-27)
 
 
