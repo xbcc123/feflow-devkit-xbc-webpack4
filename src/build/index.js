@@ -413,7 +413,6 @@ class Builder {
 	}
 
 	setLessRule(isModule, isMinicss) {
-		console.log(isModule, isMinicss)
 		return {
 			test: /\.less$/,
 			use: [

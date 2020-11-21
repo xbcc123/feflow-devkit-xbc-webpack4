@@ -82,7 +82,11 @@ const prodConfig = {
 		//   threshold: 10240,
 		//   minRatio: 0
 		// }),
-
+		new webpack.HashedModuleIdsPlugin({
+			hashFunction: 'sha256',
+			hashDigest: 'hex',
+			hashDigestLength: 20
+		  }),
 		// 压缩html
 		new HtmlWebpackPlugin({
 			filename: "index.html",
