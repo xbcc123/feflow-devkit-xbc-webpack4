@@ -134,6 +134,6 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.2",
-    "webpack-subresource-integrity": "1.4.0"
+    "webpack-subresource-integrity": "1.5.1"
   }
 }
