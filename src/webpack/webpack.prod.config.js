@@ -83,10 +83,10 @@ const prodConfig = {
 		//   minRatio: 0
 		// }),
 		new webpack.HashedModuleIdsPlugin({
-			hashFunction: 'sha256',
-			hashDigest: 'hex',
+			hashFunction: "sha256",
+			hashDigest: "hex",
 			hashDigestLength: 20
-		  }),
+		}),
 		// 压缩html
 		new HtmlWebpackPlugin({
 			filename: "index.html",
@@ -105,39 +105,38 @@ const prodConfig = {
 	optimization: {
 		splitChunks: {
 			chunks: "all",
-			minSize: 0,
+			minSize: 80 * 1024,
 			maxSize: 200 * 1024,
 			minChunks: 1,
 			maxAsyncRequests: 6,
 			maxInitialRequests: 4,
 			automaticNameDelimiter: "~",
-			automaticNameMaxLength: 30,
-			cacheGroups: {
-				vendor: {
-					// node_modules内的依赖库
-					// chunks: "initial", // initial all async
-					// test: /[\\/]node_modules[\\/]/,
-					// name: "vendor",
-					// minChunks: 2, //被不同entry引用次数(import),1次的话没必要提取
-					// maxInitialRequests: 5, // 入口点最大请求数量
-					// // maxAsyncRequests: 3, // 按需加载时并行请求的最大数量
-					// minSize: 0,
-					// maxSize: 400 * 1024,
-					// priority: 100,
-					// reuseExistingChunk: true
-				},
-				router: {
-					chunks: "all",
-					test: /[\\/]router[\\/]/,
-					name: "public", //生成文件名，依据output规则
-					minChunks: 1,
-					maxInitialRequests: 5,
-					minSize: 0,
-					maxSize: 80 * 1024,
-					priority: 1,
-					reuseExistingChunk: true
-				}
-			}
+			automaticNameMaxLength: 30
+			// cacheGroups: {
+			// 	vendor: {
+			// 		chunks: "initial", // initial all async
+			// 		test: /[\\/]node_modules[\\/]/,
+			// 		name: "vendor",
+			// 		minChunks: 2, //被不同entry引用次数(import),1次的话没必要提取
+			// 		maxInitialRequests: 5, // 入口点最大请求数量
+			// 		// maxAsyncRequests: 3, // 按需加载时并行请求的最大数量
+			// 		minSize: 0,
+			// 		maxSize: 400 * 1024,
+			// 		priority: 100,
+			// 		reuseExistingChunk: true
+			// 	},
+			// 	router: {
+			// 		chunks: "all",
+			// 		test: /[\\/]router[\\/]/,
+			// 		name: "public", //生成文件名，依据output规则
+			// 		minChunks: 1,
+			// 		maxInitialRequests: 5,
+			// 		minSize: 0,
+			// 		maxSize: 80 * 1024,
+			// 		priority: 1,
+			// 		reuseExistingChunk: true
+			// 	}
+			// }
 		},
 		minimize: true,
 		minimizer: [
