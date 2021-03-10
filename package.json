@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
-    "b": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
+    "build:test": "./node_modules/.bin/babel src --out-dir lib --presets=@babel/env",
     "eslint": "eslint ./src --fix",
     "jest": "jest",
     "jestcov": "jest --coverage",

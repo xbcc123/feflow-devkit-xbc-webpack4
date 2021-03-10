@@ -1,61 +1,14 @@
-// const autoprefixer = require("autoprefixer");
 const glob = require("glob")
 const path = require("path")
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
-// const threadLoader = require("thread-loader"); // 开始多线程主要针对js 会增加服务器构建压力
 
 const projectRoot = process.cwd()
 
-// 设置多页配置
-// const setMPA = () => {
-//   const entry = {};
-//   const htmlWebpackPlugins = [];
-//   const entryFiles = glob.sync(path.join(projectRoot, './src/*/index.js'));
-
-//   Object.keys(entryFiles)
-//     .map((index) => {
-//       const entryFile = entryFiles[index];
-
-//       const match = entryFile.match(/src\/(.*)\/index\.js/);
-//       const pageName = match && match[1];
-
-//       entry[pageName] = entryFile;
-//       return htmlWebpackPlugins.push(
-//         new HtmlWebpackPlugin({
-//           inlineSource: '.css$',
-//           template: path.join(projectRoot, `./src/${pageName}/index.html`),
-//           filename: `${pageName}.html`,
-//           chunks: ['vendors', pageName],
-//           inject: true,
-//           minify: {
-//             html5: true,
-//             collapseWhitespace: true,
-//             preserveLineBreaks: false,
-//             minifyCSS: true,
-//             minifyJS: true,
-//             removeComments: false,
-//           },
-//         })
-//       );
-//     });
-
-//   return {
-//     entry,
-//     htmlWebpackPlugins,
-//   };
-// };
-
-// const { entry, htmlWebpackPlugins } = setMPA();
-
-// const entry = ['@babel/polyfill', path.join(projectRoot, "./src/index.js")];
 const entry = path.join(projectRoot, "./src/index.js")
-
-// console.log(__dirname)
 
 module.exports = {
 	context: path.join(projectRoot, "./"),
@@ -67,14 +20,6 @@ module.exports = {
 		pathinfo: false,
 		publicPath: "/"
 	},
-
-	// output: {
-	//   path: path.resolve(__dirname, "../dist"),
-	//   filename: "static/js/[name].[hash].bundle.js",
-	//   chunkFilename: "static/js/[name].[chunkhash].bundle.js",
-	//   pathinfo: false,
-	//   publicPath: "/"
-	// },
 
 	externals: {
 		react: "React",
@@ -133,9 +78,6 @@ module.exports = {
 					path.resolve(__dirname, "../../node_modules")
 				],
 				use: [
-					//   {
-					//     loader: "thread-loader"
-					//   },
 					{
 						loader: "babel-loader",
 						options: {
@@ -148,9 +90,6 @@ module.exports = {
 			{
 				test: /\.(j|t)sx?$/,
 				use: [
-					//   {
-					//     loader: "thread-loader"
-					//   },
 					{
 						loader: "babel-loader",
 						options: {
@@ -173,13 +112,11 @@ module.exports = {
 							limit: 8192,
 							esModule: false, // 这里设置为false
 							name: "static/img/[name].[hash:7].[ext]"
-							// publicPath: path.join(projectRoot, "dist")
 						}
 					}
 				]
 			},
 			{
-				// test: /\.(woff|woff2|eot|ttf|otf)$/,
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				use: [
 					{
@@ -188,7 +125,6 @@ module.exports = {
 							limit: 8192,
 							esModule: false, // 这里设置为false
 							name: "static/fonts/[name].[hash:7].[ext]"
-							// publicPath: path.join(projectRoot, "dist")
 						}
 					}
 				]
@@ -202,7 +138,6 @@ module.exports = {
 							limit: 8192,
 							esModule: false, // 这里设置为false
 							name: "static/media/[name].[hash:7].[ext]"
-							// publicPath: path.join(projectRoot, "dist")
 						}
 					}
 				]
@@ -211,15 +146,11 @@ module.exports = {
 	},
 
 	plugins: [
-		// new MiniCssExtractPlugin({
-		//   filename: "[name]_[contenthash:8].css"
-		// }),
 		new VueLoaderPlugin(),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: path.join(projectRoot, "index.html")
-			// inject: true,
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -228,17 +159,5 @@ module.exports = {
 				ignore: [".*"]
 			}
 		])
-		// new webpack.DllReferencePlugin({
-		//     context: path.join(__dirname),
-		//     manifest: require("./vendor-manifest.json"),
-		// }),
 	]
-	//   function errorPlugin() {
-	//     this.hooks.done.tap('done', (stats) => {
-	//       if (stats.compilation.errors && stats.compilation.errors.length && process.argv.indexOf('--watch') === -1) {
-	//         process.exit(1);
-	//       }
-	//     });
-	//   },
-	// ].concat(htmlWebpackPlugins)
 }
