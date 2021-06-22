@@ -1,10 +1,11 @@
-const glob = require("glob")
 const path = require("path")
-const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const colors = require("colors");
+
 
 const projectRoot = process.cwd()
 
@@ -64,6 +65,9 @@ module.exports = {
 				test: /\.vue$/,
 				use: [
 					{
+						loader: "thread-loader"
+					},
+					{
 						loader: "cache-loader"
 					},
 					{
@@ -79,6 +83,9 @@ module.exports = {
 				],
 				use: [
 					{
+						loader: "thread-loader"
+					},
+					{
 						loader: "babel-loader",
 						options: {
 							cacheDirectory: true,
@@ -90,6 +97,9 @@ module.exports = {
 			{
 				test: /\.(j|t)sx?$/,
 				use: [
+					{
+						loader: "thread-loader"
+					},
 					{
 						loader: "babel-loader",
 						options: {
@@ -158,6 +168,11 @@ module.exports = {
 				to: "static",
 				ignore: [".*"]
 			}
-		])
+		]),
+		new ProgressBarPlugin({
+			format:
+				"run [:bar] " + colors.green.bold(":percent") + " (:elapsed seconds)",
+			clear: true
+		}),
 	]
 }

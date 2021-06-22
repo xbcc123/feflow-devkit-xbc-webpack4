@@ -48,10 +48,10 @@ export function run(ctx, options) {
 	importConfig = getConfig(ctx.projectConfig, options.env)
 	config = merge(currentConfig, build.createProdConfig(importConfig))
 	// config = smp.wrap(config) // 打包会使external失效
-	const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))
-	spinner.start()
+	// const spinner = ora(chalk.yellow("项目正在打包 请稍候..."))  // 使用ProgressBarPlugin替换
+	// spinner.start()
 	webpack(config, (err, stats) => {
-		spinner.stop()
+		// spinner.stop()
 		if (err) throw err
 		process.stdout.write(
 			stats.toString({

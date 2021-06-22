@@ -8,7 +8,6 @@ const projectRoot = process.cwd()
 
 const prodConfig = {
 	mode: "production",
-
 	devtool: false,
 	module: {
 		rules: [
@@ -50,7 +49,7 @@ const prodConfig = {
 		minimizer: [
 			new TerserPlugin({
 				cache: true,
-				parallel: false, // 开启多进程
+				parallel: true, // 开启多进程
 				terserOptions: {
 					ecma: undefined,
 					warnings: false,
@@ -59,7 +58,7 @@ const prodConfig = {
 						drop_console: true,
 						pure_funcs: ["console.log"] // 统一删除console.log
 					},
-					mangle: true, // Note `mangle.properties` is `false` by default.
+					mangle: true,
 					module: false,
 					output: {
 						comments: false

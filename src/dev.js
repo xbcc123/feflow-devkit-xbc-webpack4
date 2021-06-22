@@ -70,14 +70,12 @@ module.exports = ctx => {
 			colors: true
 		}
 	})
-
 	const server = new WebpackDevServer(compiler, devServerOptions)
-
 	server.listen(devServerOptions.port, myHost, () => {
-		console.log(
-			chalk.cyan(
-				`ctrl+鼠标左键点开这个链接愉快的玩耍吧:http://${myHost}:${devServerOptions.port}`
-			)
-		)
+		// console.log(
+		// 	chalk.cyan(
+		// 		`ctrl+鼠标左键点开这个链接愉快的玩耍吧:http://${myHost}:${devServerOptions.port}`
+		// 	)
+		// )
 	})
 }
