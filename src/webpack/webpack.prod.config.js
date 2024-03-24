@@ -3,8 +3,8 @@ const webpack = require("webpack")
 const merge = require("webpack-merge")
 const TerserPlugin = require("terser-webpack-plugin")
 const baseConfig = require("./webpack.base.config")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 const projectRoot = process.cwd()
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 const prodConfig = {
 	mode: "production",
@@ -14,7 +14,7 @@ const prodConfig = {
 		]
 	},
 	plugins: [
-		new webpack.HashedModuleIdsPlugin({
+		new webpack.ids.HashedModuleIdsPlugin({
 			hashFunction: "sha256",
 			hashDigest: "hex",
 			hashDigestLength: 20
@@ -42,8 +42,6 @@ const prodConfig = {
 			minChunks: 1,
 			maxAsyncRequests: 6,
 			maxInitialRequests: 4,
-			automaticNameDelimiter: "~",
-			automaticNameMaxLength: 30
 		},
 		minimize: true,
 		minimizer: [

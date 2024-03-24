@@ -2,6 +2,7 @@ const merge = require("webpack-merge")
 const webpack = require("webpack")
 const path = require("path")
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const baseConfig = require("./webpack.base.config")
 
 const projectRoot = process.cwd()
@@ -13,6 +14,10 @@ const devConfig = {
 		]
 	},
 	plugins: [
+		new HtmlWebpackPlugin({
+			filename: "index.html",
+			template: path.join(projectRoot, "index.html")
+		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new FriendlyErrorsWebpackPlugin()
 	],
@@ -32,7 +37,7 @@ const devConfig = {
 			poll: 1000
 		}
 	},
-	devtool: "cheap-module-eval-source-map"
+	devtool: "eval-cheap-source-map"
 }
 
 module.exports = merge(baseConfig, devConfig)

@@ -1,6 +1,5 @@
 const path = require("path")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -158,10 +157,6 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({
-			filename: "index.html",
-			template: path.join(projectRoot, "index.html")
-		}),
 		new CopyWebpackPlugin([
 			{
 				from: path.join(projectRoot, "./static"),
