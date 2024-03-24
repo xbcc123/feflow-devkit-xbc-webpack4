@@ -20,7 +20,9 @@ module.exports = {
 		pathinfo: false,
 		publicPath: "/"
 	},
-
+	cache: {
+		type: 'filesystem',
+	},
 	externals: {
 		react: "React",
 		"react-dom": "ReactDOM",

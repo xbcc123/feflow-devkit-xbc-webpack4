@@ -46,7 +46,6 @@ const prodConfig = {
 		minimize: true,
 		minimizer: [
 			new TerserPlugin({
-				cache: true,
 				parallel: true, // 开启多进程
 				terserOptions: {
 					ecma: undefined,
